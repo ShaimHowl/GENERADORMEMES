@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memes de Shaim y Jansen</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Memes de Shaim y Jansen</h1>
+    <p class="tagline">Crea, arrastra, ajusta y comparte tu meme perfecto</p>
+  </header>
+
+  <main class="app">
+    <section class="canvas-card">
+      <div class="canvas-toolbar">
+        <button id="fitToScreen" class="btn ghost">Ajustar vista</button>
+        <button id="resetPositions" class="btn ghost">Reiniciar textos</button>
+      </div>
+      <div class="canvas-wrap">
+        <canvas id="memeCanvas" width="800" height="600" aria-label="Lienzo de meme"></canvas>
+      </div>
+    </section>
+
+    <aside class="controls">
+      <div class="control-group">
+        <label class="file">
+          <input type="file" id="imageInput" accept="image/*" />
+          <span>Subir imagen</span>
+        </label>
+        <button id="randomBg" class="btn">Fondo dinámico</button>
+      </div>
+
+      <div class="control-group">
+        <label for="topText">Texto superior</label>
+        <input id="topText" type="text" placeholder="Escribe aquí..." />
+        <label for="bottomText">Texto inferior</label>
+        <input id="bottomText" type="text" placeholder="Escribe aquí..." />
+      </div>
+
+      <div class="grid-2 control-group">
+        <div>
+          <label for="fontFamily">Fuente</label>
+          <select id="fontFamily">
+            <option value="Impact">Impact (clásico)</option>
+            <option value="Anton, sans-serif">Anton</option>
+            <option value="Bebas Neue, sans-serif">Bebas Neue</option>
+            <option value="Montserrat, sans-serif">Montserrat</option>
+            <option value="system-ui, sans-serif">System</option>
+          </select>
+        </div>
+        <div>
+          <label for="fontSize">Tamaño (px)</label>
+          <input id="fontSize" type="range" min="24" max="144" value="64" />
+        </div>
+      </div>
+
+      <div class="grid-2 control-group">
+        <div>
+          <label for="textColor">Color del texto</label>
+          <input id="textColor" type="color" value="#ffffff" />
+        </div>
+        <div>
+          <label for="strokeColor">Color del borde</label>
+          <input id="strokeColor" type="color" value="#000000" />
+        </div>
+      </div>
+
+      <div class="grid-2 control-group">
+        <div>
+          <label for="strokeWidth">Grosor del borde</label>
+          <input id="strokeWidth" type="range" min="0" max="12" value="6" />
+        </div>
+        <div>
+          <label for="letterSpacing">Espaciado de letras</label>
+          <input id="letterSpacing" type="range" min="0" max="8" value="0" />
+        </div>
+      </div>
+
+      <div class="grid-2 control-group">
+        <div>
+          <label for="alignment">Alineación</label>
+          <select id="alignment">
+            <option value="center">Centro</option>
+            <option value="left">Izquierda</option>
+            <option value="right">Derecha</option>
+          </select>
+        </div>
+        <div class="checkbox-line">
+          <input id="shadowToggle" type="checkbox" checked />
+          <label for="shadowToggle">Sombra suave</label>
+        </div>
+      </div>
+
+      <div class="control-group actions">
+        <button id="downloadBtn" class="btn primary">Descargar PNG</button>
+        <button id="clearBtn" class="btn danger">Limpiar todo</button>
+      </div>
+
+      <div class="hint">
+        Consejo: Arrastra los textos directamente sobre el lienzo. Doble clic para editar rápido.
+      </div>
+    </aside>
+  </main>
+
+  <footer class="app-footer">
+    <span>Hecho con estilo para Shaim y Jansen ✨</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
